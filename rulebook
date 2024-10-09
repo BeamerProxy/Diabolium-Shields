@@ -1,0 +1,100 @@
+{
+  "name": "Diabolium Shields",
+  "revision": "0.0.1",
+  "game": "Warhammer 40k",
+  "genre": "generic",
+  "publisher": "Beamerproxy",
+  "url": "",
+  "notes": "",
+  "wip": true,
+  "dependencies": [
+    {
+      "slug": "3QUSEA",
+      "name": "Space Marines",
+      "game": "Warhammer 40k",
+      "source": "https://raw.githubusercontent.com/RosterizerTestData/Warhammer40k10e/main/Space_Marines.rulebook"
+    }
+  ],
+  "rulebook": {
+    "assetTaxonomy": {},
+    "assetCatalog": {
+      "Ability§Recitation of Fire": {
+        "allowed": {
+          "items": [
+            "Character§Chaplain in Phobos Armour"
+          ]
+        },
+        "text": "While this model is leading a unit, weapons equipped by models in that unit have the [ASSAULT] ability."
+      },
+      "Character§Chaplain in Phobos Armour": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Ability§Leader",
+              "text": "* Before the battle, Character units with the Leader ability can be attached to one of their Bodyguard units to form an Attached unit.\n* Attached units can only contain one Leader.\n* Attacks cannot be allocated to Character models in Attached units.\n\n* Before the battle, Character units with the Leader ability can be attached to one of their Bodyguard units to form an Attached unit.\n* Attached units can only contain one Leader.\n* Attacks cannot be allocated to Character models in Attached units.\n\n* Before the battle, Character units with the Leader ability can be attached to one of their Bodyguard units to form an Attached unit.\n* Attached units can only contain one Leader.\n* Attacks cannot be allocated to Character models in Attached units.\n\nThis model can be attached to the following units:\n\n* Infiltrator Squad\n\n* \n\n* Hellblaster Squad\n"
+            },
+            "Ability§Oath of Moment",
+            "Ability§Litany of Hate",
+            {
+              "item": "Ability§Invulnerable",
+              "stats": {
+                "x": {
+                  "value": "4+"
+                }
+              }
+            },
+            "Melee Weapon§Chaplain—Crozius arcanum",
+            "Ranged Weapon§Chaplain on Bike—Absolvor bolt pistol",
+            "Ability§Recitation of Fire",
+            "Ability§Infiltrators"
+          ]
+        },
+        "keywords": {
+          "Faction": [
+            "Adeptus Astartes"
+          ],
+          "Source": [
+            "10th Edition Codex"
+          ],
+          "Keywords": [
+            "Chaplain",
+            "Character",
+            "Grenades",
+            "Imperium",
+            "Infantry",
+            "Phobos"
+          ],
+          "Category": [
+            "Character"
+          ]
+        },
+        "stats": {
+          "Ld": {
+            "value": 5
+          },
+          "M": {
+            "value": 6
+          },
+          "OC": {
+            "value": 1
+          },
+          "Points": {
+            "value": 60
+          },
+          "Sv": {
+            "value": 3
+          },
+          "T": {
+            "value": 4
+          },
+          "W": {
+            "value": 4
+          }
+        }
+      },
+      "Roster§Roster": {}
+    },
+    "gameModes": {},
+    "theme": {}
+  }
+}
