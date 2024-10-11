@@ -708,8 +708,7 @@
             "Melee Weapon§Primaris Techmarine—Servo-arm",
             "Melee Weapon§Primaris Techmarine—Omnissian power axe",
             "Ranged Weapon§Primaris Techmarine—Grav-pistol",
-            "Melee Weapon§Techmarine—Plasma cutter",
-            "Ranged Weapon§Conversion beamer"
+            "Melee Weapon§Techmarine—Plasma cutter"
           ]
         },
         "keywords": {
@@ -738,16 +737,8 @@
           "M": {
             "value": 6
           },
-          "OC": {
-            "value": 3
-          },
-          "Points": {
-            "value": 60
-          },
-          "Primary": {
+          "Main Gun": {
             "dynamic": true,
-            "group": "Loadout",
-            "groupOrder": 2,
             "ranks": {
               "Forge Bolter": {
                 "order": 0,
@@ -757,27 +748,49 @@
                   }
                 ]
               },
-              "Flamer": {
+              "Heavy flamer": {
                 "order": 1,
                 "traits": [
                   {
-                    "trait": "Ranged Weapon§Adeptus Astartes Armoury—Flamer"
+                    "trait": "Ranged Weapon§Adeptus Astartes Armoury—Heavy flamer"
                   }
                 ]
               }
             },
             "statType": "rank",
             "value": "Forge Bolter",
-            "visibility": "active"
+            "visibility": "normal"
           },
-          "Sv": {
+          "OC": {
             "value": 3
           },
+          "Points": {
+            "value": 60
+          },
+          "Ranged Option": {
+            "dynamic": true,
+            "ranks": {
+              "Conversion beamer": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon§Conversion beamer"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "Conversion beamer",
+            "visibility": "normal"
+          },
+          "Sv": {
+            "value": 2
+          },
           "T": {
-            "value": 4
+            "value": 6
           },
           "W": {
-            "value": 4
+            "value": 5
           }
         }
       },
