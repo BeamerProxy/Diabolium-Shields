@@ -26,6 +26,9 @@
         },
         "text": "While this model is leading a unit, weapons equipped by models in that unit have the [ASSAULT] ability."
       },
+      "Ability§Swooping Charge": {
+        "text": "This model's unit is eligible to shoot and declare a charge in a turn at which it Advanced."
+      },
       "Character§Apothecary in Phobos Armour": {
         "assets": {
           "traits": [
@@ -147,6 +150,128 @@
           }
         }
       },
+      "Character§Apothecary with Jump Pack": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Ability§Leader",
+              "text": "This model can be attached to the following units:\n\n* Assault Intercessor Squad\n\n* Desolation Squad\n* Devastator Squad\n* Hellblaster Squad\n\n* Infernus Squad\n\n* Intercessor Squad\n\n* Sternguard Veteran Squad\n* Tactical Squad\n\nYou can attach this model to one of the above units even if one Captain, Chapter Master or Lieutenant model has already been attached to it. If you do, and that Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths."
+            },
+            "Ability§Oath of Moment",
+            "Ability§Narthecium",
+            "Ability§Gene-seed Recovery",
+            "Ranged Weapon§Primaris Apothecary—Absolvor bolt pistol",
+            "Ranged Weapon§Primaris Apothecary—Reductor pistol",
+            "Melee Weapon§Apothecary on Bike—Astartes chainsword"
+          ]
+        },
+        "keywords": {
+          "Faction": [
+            "Adeptus Astartes"
+          ],
+          "Source": [
+            "10th Edition Codex"
+          ],
+          "Keywords": [
+            "Apothecary",
+            "Character",
+            "Fly",
+            "Grenades",
+            "Imperium",
+            "Infantry",
+            "Jump Pack",
+            "Tacticus"
+          ],
+          "Category": [
+            "Character"
+          ]
+        },
+        "rules": {
+          "allowTwoLeaders": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Leader",
+                    "max"
+                  ]
+                ],
+                "value": 2
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Captain"
+                  ]
+                ]
+              },
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Chapter Master"
+                  ]
+                ]
+              },
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Lieutenant"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass"
+          }
+        },
+        "stats": {
+          "Ld": {
+            "value": 6
+          },
+          "M": {
+            "value": 12
+          },
+          "OC": {
+            "value": 1
+          },
+          "Points": {
+            "value": 55
+          },
+          "Sv": {
+            "value": 3
+          },
+          "T": {
+            "value": 4
+          },
+          "W": {
+            "value": 4
+          }
+        }
+      },
       "Character§Chaplain in Phobos Armour": {
         "assets": {
           "traits": [
@@ -210,6 +335,489 @@
           },
           "W": {
             "value": 4
+          }
+        }
+      },
+      "Character§Lieutenant with Jump Pack": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Ability§Leader",
+              "text": "This model can be attached to the following units:\n\n* Assault Intercessor Squad\n\n* Bladeguard Veteran Squad\n\n* Company Heroes\n\n* Hellblaster Squad\n\n* Infernus Squad\n\n* Intercessor Squad\n\n* Sternguard Veteran Squad\n\n* Tactical Squad\n\nYou can attach this model to one of the above units even if one Captain or Chapter Master model has already been attached to it. If you do, and that Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths."
+            },
+            "Ability§Oath of Moment",
+            "Ability§Tactical Precision",
+            "Ability§Swooping Charge"
+          ]
+        },
+        "keywords": {
+          "Faction": [
+            "Adeptus Astartes"
+          ],
+          "Source": [
+            "10th Edition Codex"
+          ],
+          "Keywords": [
+            "Character",
+            "Fly",
+            "Grenades",
+            "Imperium",
+            "Infantry",
+            "Jump Pack",
+            "Lieutenant",
+            "Tacticus"
+          ],
+          "Category": [
+            "Character"
+          ]
+        },
+        "rules": {
+          "allowTwoLeaders": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Leader",
+                    "max"
+                  ]
+                ],
+                "value": 2
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Captain"
+                  ]
+                ]
+              },
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Chapter Master"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass"
+          },
+          "disallowTwoStormShield": {
+            "actions": [
+              {
+                "actionType": "remove",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Primary",
+                    "ranks"
+                  ]
+                ],
+                "value": "Storm shield"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Secondary",
+                    "value"
+                  ]
+                ],
+                "value": "Close combat + shield"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass"
+          },
+          "noVolkite": {
+            "actions": [
+              {
+                "actionType": "remove",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Pistol",
+                    "ranks"
+                  ],
+                  [
+                    "{self}",
+                    "stats",
+                    "Melee",
+                    "ranks"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": true,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Primary",
+                    "value"
+                  ]
+                ],
+                "value": "Neo-volkite, Master power weapon & shield"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 220
+          },
+          "volkite": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    [
+                      "Melee",
+                      "Pistol"
+                    ],
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    [
+                      "Pistol",
+                      "Melee"
+                    ],
+                    "visibility"
+                  ]
+                ],
+                "value": "hidden"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Primary",
+                    "value"
+                  ]
+                ],
+                "value": "Neo-volkite, Master power weapon & shield"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 220
+          }
+        },
+        "stats": {
+          "Ld": {
+            "value": 6
+          },
+          "M": {
+            "value": 6
+          },
+          "Melee": {
+            "dynamic": true,
+            "group": "Loadout",
+            "groupOrder": 2,
+            "ranks": {
+              "4": {
+                "order": 4
+              },
+              "Close combat weapon": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon§Lieutenant—Close combat weapon"
+                  }
+                ]
+              },
+              "Master-crafted power weapon": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon§Lieutenant—Master-Crafted Power Weapon"
+                  }
+                ]
+              },
+              "Power fist": {
+                "order": 2,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon§Lieutenant—Power fist"
+                  }
+                ]
+              },
+              "Thunder Hammer": {
+                "order": 3,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon§Captain with Jump Pack—Thunder hammer"
+                  }
+                ]
+              }
+            },
+            "statOrder": 4,
+            "statType": "rank",
+            "value": "Close combat weapon",
+            "visibility": "normal"
+          },
+          "OC": {
+            "value": 1
+          },
+          "Pistol": {
+            "dynamic": true,
+            "group": "Loadout",
+            "groupOrder": 2,
+            "ranks": {
+              "Bolt pistol": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon§Lieutenant—Bolt pistol"
+                  }
+                ]
+              },
+              "Heavy bolt pistol": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon§Lieutenant—Heavy Bolt Pistol"
+                  }
+                ]
+              },
+              "-": {
+                "order": 2
+              }
+            },
+            "statOrder": 3,
+            "statType": "rank",
+            "value": "Bolt pistol",
+            "visibility": "active"
+          },
+          "Points": {
+            "value": 65
+          },
+          "Primary": {
+            "dynamic": true,
+            "group": "Loadout",
+            "groupOrder": 2,
+            "ranks": {
+              "Master-crafted bolter": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon§Lieutenant—Master-crafted bolter"
+                  }
+                ]
+              },
+              "Plasma pistol": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon§Lieutenant—Plasma pistol"
+                  }
+                ]
+              },
+              "Power fist": {
+                "order": 2,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon§Lieutenant—Power fist"
+                  }
+                ]
+              },
+              "Master-crafted power weapon": {
+                "order": 3,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon§Lieutenant—Master-Crafted Power Weapon"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "Master-crafted bolter",
+            "visibility": "active"
+          },
+          "Sv": {
+            "value": 3
+          },
+          "T": {
+            "value": 4
+          },
+          "W": {
+            "value": 4
+          }
+        }
+      },
+      "Character§Techmarine in Gravis Armour": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Ability§Leader",
+              "text": "* Before the battle, Character units with the Leader ability can be attached to one of their Bodyguard units to form an Attached unit.\n* Attached units can only contain one Leader.\n* Attacks cannot be allocated to Character models in Attached units.\n\n* Before the battle, Character units with the Leader ability can be attached to one of their Bodyguard units to form an Attached unit.\n* Attached units can only contain one Leader.\n* Attacks cannot be allocated to Character models in Attached units.\n\n* Before the battle, Character units with the Leader ability can be attached to one of their Bodyguard units to form an Attached unit.\n* Attached units can only contain one Leader.\n* Attacks cannot be allocated to Character models in Attached units.\n\nThis model can be attached to the following units:\n\n* Aggressor Squad\n\n* Eradicator Squad\n\n* Heavy Intercessor Squad"
+            },
+            "Ability§Oath of Moment",
+            "Ability§Techmarine",
+            "Ability§Blessing of the Omnissiah",
+            "Ability§Vengeance of the Omnissiah",
+            "Melee Weapon§Primaris Techmarine—Servo-arm",
+            "Melee Weapon§Primaris Techmarine—Omnissian power axe",
+            "Ranged Weapon§Primaris Techmarine—Grav-pistol",
+            "Melee Weapon§Techmarine—Plasma cutter"
+          ]
+        },
+        "keywords": {
+          "Faction": [
+            "Adeptus Astartes"
+          ],
+          "Source": [
+            "10th Edition Codex"
+          ],
+          "Keywords": [
+            "Character",
+            "Gravis",
+            "Grenades",
+            "Imperium",
+            "Infantry",
+            "Techmarine"
+          ],
+          "Category": [
+            "Character"
+          ]
+        },
+        "stats": {
+          "Ld": {
+            "value": 6
+          },
+          "M": {
+            "value": 6
+          },
+          "Main Gun": {
+            "ranks": {
+              "Forge Bolter": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon§Primaris Techmarine—Forge bolter"
+                  }
+                ]
+              },
+              "Flamer": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon§Adeptus Astartes Armoury—Flamer"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": null,
+            "visibility": "normal"
+          },
+          "OC": {
+            "value": 3
+          },
+          "Points": {
+            "value": 60
+          },
+          "Ranged Option": {
+            "ranks": {
+              "Conversion beamer": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon§Conversion beamer"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "visibility": "normal"
+          },
+          "Sv": {
+            "value": 2
+          },
+          "T": {
+            "value": 6
+          },
+          "W": {
+            "value": 5
+          }
+        }
+      },
+      "Ranged Weapon§Conversion beamer": {
+        "aspects": {
+          "Label": "Conversion beamer"
+        },
+        "assets": {
+          "traits": [
+            "Ability§Conversion"
+          ]
+        },
+        "stats": {
+          "A": {
+            "value": 1
+          },
+          "AP": {
+            "value": -1
+          },
+          "BS": {
+            "value": 3
+          },
+          "D": {
+            "value": 2
+          },
+          "Range": {
+            "value": 24
+          },
+          "S": {
+            "value": 8
           }
         }
       },
