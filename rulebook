@@ -1,5 +1,5 @@
 {
-  "name": "Diabolium Shields",
+  "name": "Invasor Space Marines",
   "revision": "0.0.1",
   "game": "Warhammer 40k",
   "genre": "generic",
@@ -25,6 +25,127 @@
           ]
         },
         "text": "While this model is leading a unit, weapons equipped by models in that unit have the [ASSAULT] ability."
+      },
+      "Character§Apothecary in Phobos Armour": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Ability§Leader",
+              "text": "* Before the battle, Character units with the Leader ability can be attached to one of their Bodyguard units to form an Attached unit.\n* Attached units can only contain one Leader.\n* Attacks cannot be allocated to Character models in Attached units.\n\nThis model can be attached to the following units:\n\n* Infiltrator Squad\n\n* Reiver Squad\n\n* Eliminator Squad\n\n* Incursor Squad\n\nYou can attach this model to one of the above units even if one Captain, Chapter Master or Lieutenant model has already been attached to it. If you do, and that Bodyguard unit is destroyed, the Leader units attached to it become separate units, with their original Starting Strengths."
+            },
+            "Ability§Oath of Moment",
+            "Ability§Narthecium",
+            "Ability§Gene-seed Recovery",
+            "Ranged Weapon§Primaris Apothecary—Absolvor bolt pistol",
+            "Ranged Weapon§Primaris Apothecary—Reductor pistol",
+            "Melee Weapon§Primaris Apothecary—Close combat weapon",
+            "Ability§Infiltrators"
+          ]
+        },
+        "keywords": {
+          "Faction": [
+            "Adeptus Astartes"
+          ],
+          "Source": [
+            "10th Edition Codex"
+          ],
+          "Keywords": [
+            "Apothecary",
+            "Character",
+            "Grenades",
+            "Imperium",
+            "Infantry",
+            "Phobos"
+          ],
+          "Category": [
+            "Character"
+          ]
+        },
+        "rules": {
+          "allowTwoLeaders": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Leader",
+                    "max"
+                  ]
+                ],
+                "value": 2
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Captain"
+                  ]
+                ]
+              },
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Chapter Master"
+                  ]
+                ]
+              },
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Lieutenant"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass"
+          }
+        },
+        "stats": {
+          "Ld": {
+            "value": 6
+          },
+          "M": {
+            "value": 6
+          },
+          "OC": {
+            "value": 1
+          },
+          "Points": {
+            "value": 55
+          },
+          "Sv": {
+            "value": 3
+          },
+          "T": {
+            "value": 4
+          },
+          "W": {
+            "value": 4
+          }
+        }
       },
       "Character§Chaplain in Phobos Armour": {
         "assets": {
@@ -79,7 +200,7 @@
             "value": 1
           },
           "Points": {
-            "value": 60
+            "value": 65
           },
           "Sv": {
             "value": 3
