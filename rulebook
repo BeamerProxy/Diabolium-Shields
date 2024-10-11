@@ -708,7 +708,8 @@
             "Melee Weapon§Primaris Techmarine—Servo-arm",
             "Melee Weapon§Primaris Techmarine—Omnissian power axe",
             "Ranged Weapon§Primaris Techmarine—Grav-pistol",
-            "Melee Weapon§Techmarine—Plasma cutter"
+            "Melee Weapon§Techmarine—Plasma cutter",
+            "Ranged Weapon§Conversion beamer"
           ]
         },
         "keywords": {
@@ -737,7 +738,16 @@
           "M": {
             "value": 6
           },
-          "Main Gun": {
+          "OC": {
+            "value": 3
+          },
+          "Points": {
+            "value": 60
+          },
+          "Primary": {
+            "dynamic": true,
+            "group": "Loadout",
+            "groupOrder": 2,
             "ranks": {
               "Forge Bolter": {
                 "order": 0,
@@ -757,37 +767,17 @@
               }
             },
             "statType": "rank",
-            "value": null,
-            "visibility": "normal"
-          },
-          "OC": {
-            "value": 3
-          },
-          "Points": {
-            "value": 60
-          },
-          "Ranged Option": {
-            "ranks": {
-              "Conversion beamer": {
-                "order": 0,
-                "traits": [
-                  {
-                    "trait": "Ranged Weapon§Conversion beamer"
-                  }
-                ]
-              }
-            },
-            "statType": "rank",
-            "visibility": "normal"
+            "value": "Forge Bolter",
+            "visibility": "active"
           },
           "Sv": {
-            "value": 2
+            "value": 3
           },
           "T": {
-            "value": 6
+            "value": 4
           },
           "W": {
-            "value": 5
+            "value": 4
           }
         }
       },
